@@ -1,0 +1,39 @@
+Subject: BDNY this weekend. What I built, why, and the money in it for them.
+
+Team,
+
+BDNY is Sunday and Monday at Javits, 861 booths of lighting, furniture, rugs, tile and wallcovering makers. These are the exact companies we want: owner led, 5 to 50 people, selling to designers and hotels, no data team. They are also designers themselves, so anything generic would lose them in two seconds.
+
+Instead of a different mockup for every vendor, I built one story they all live every Monday. Four files that do not agree. Quotes, orders, freight and a deposit sheet. Names spelled three ways, dates typed three ways, half the promised ship dates blank. On screen that mess turns into one clean ledger with a 95 percent confidence line and Jake's and Justin's sign off on it.
+
+The point is not clean data. The point is revenue they are leaving on the floor because nobody can see it. The demo puts it in dollars they recognize:
+
+$1.4M in quotes sitting open more than 60 days. Nobody is calling on them because nobody can see them. Those are sales waiting for a phone call.
+Specs that never became orders. Designers specified the product, the project got built, and someone else got the sale. We show the conversion rate by firm, so they know which designers to chase and which to stop feeding samples.
+Hit rate by firm. Half their samples and memos go to firms that never buy. Point the reps and the sample budget at the firms that do.
+3 of 8 shipments landed 12 percent or more over the price they quoted. That is margin they gave away without knowing it. Fixing the quote to landed gap is the same as a price increase nobody argues about.
+$609K of deposit money held on orders already late. Late orders become cancelled orders and refunds. Catching them early keeps the sale.
+Three price books in play. The same piece quoted at three prices means they are underpricing somewhere.
+
+Every one of those numbers is clickable and tells them what to do about it Monday morning. That is how we help them make more money, not just count it better.
+
+Then the Beyond Monday section shows the rest of what we do once the ledger is clean: a 90 day forecast of what will book with an honest range, a best, base and worst case on every blank we filled, a weekly watch that lists the five changes that matter each Monday with Jake's signature on the diff, and a buyer radar that grades every designer and purchasing agent in their market, including the ones who have never asked them for a quote.
+
+The look is built for this crowd. Each category they pick resets the palette to its material, brass for lighting, walnut for furniture, indigo for rugs, travertine for tile, plaster for wallcovering, oxblood for art. It reads like a gallery catalogue, not a dashboard.
+
+Links to share and open on your phone:
+
+Demo: https://azorian3-bdny.netlify.app
+The Walk (booth plan): https://azorian3-bdny.netlify.app/walk.html
+
+The Walk page is our plan for the floor. All 861 exhibitors are searchable. I graded the 24 New York booths worth stopping at, each with an opener, and checked them against the Manhattan radar list. Three of the radar firms are exhibiting: Stone Source at 2437, Artistic Tile at 2619 and Nemo Tile at 3037. Matter Surfaces at 2679 shares a name with Matter on our list but is almost certainly a different company, so verify before you pitch. Mark booths visited as you go and the page remembers.
+
+Attached are the one pager we hand out, in a dark and a light version with a QR code to the demo, and a 45 second spot for the booth screen or a phone. Both pages have a light theme toggle top right for anyone who prefers white.
+
+The team section lists all of us: Jake as COO, Justin as CIO, Lawrence as VP of Statistics, Thad as CCO, Ahmad as General Counsel, and Nicole and Dahlia as Account Managers, since they will be on the floor with us.
+
+Why this approach: these vendors have never seen their own problem reflected back at them this plainly, and nobody has ever shown them the sales hiding inside it. We are not selling software. We are showing them their Monday with the numbers fixed and the money found. Pricing is the same model as the website: a fixed fee ledger sprint in 10 business days, a flat monthly subscription for the weekly ledger, forecast and radar, or a fixed scope build they own. Every price is set before we start.
+
+Read it, poke at it, and tell me what breaks before Sunday.
+
+James

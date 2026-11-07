@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Azorian3 at BDNY 2026. You bring the vision. We bring the insight.</title>
+<meta name="description" content="Azorian3 cleans, standardizes and statistically completes the quote, order, freight and sample data of boutique design makers, then hands back one ledger. Fixed fee, agreed before we start.">
+<meta name="author" content="James F. Canfield IV, Azorian3">
+<meta name="theme-color" content="#0B0D10">
+<link rel="icon" type="image/png" href="data:image/png;base64,{{MARK}}">
+<style>{{CSS}}</style>
+</head>
+<body>
+<script>(function(){var t=localStorage.getItem("az3_theme")||new URLSearchParams(location.search).get("theme");if(t)document.documentElement.setAttribute("data-theme",t)})();</script>
+<header><div class="wrap">
+ <a href="#top" class="lg" aria-label="Azorian3">{{LOCKUPSVG}}</a>
+ <nav><a href="#demo" class="on">Demo</a><a href="#beyond">Beyond</a><a href="#how">What we do</a></nav>
+ <div class="hr"><span class="tag">BDNY 2026 · Javits · Nov 8 and 9</span><button class="themebtn" type="button" aria-label="Switch light and dark"><i></i><span>Light</span></button></div>
+</div></header>
+
+<main id="top" class="wrap">
+<div class="hero">
+ <canvas id="heroc" aria-hidden="true"></canvas>
+ <div class="copy">
+ <div class="eyebrow">For the people who make what the hotels buy</div><div class="matlabel"><i></i><span id="matlabel"></span></div>
+ <h1>You create.<br>You bring the vision.<br>We bring the <em>insight.</em></h1>
+ <p class="lede">Every booth in this hall sells something beautiful. Almost none of them can say, tonight, which orders are late, how much deposit money is exposed, or what that last container really cost. Pick what you make. Then watch your files turn into one ledger.</p>
+ <div class="chips" id="chips"></div>
+ <div class="row">
+  <a class="btn solid" href="#demo">Show me on my numbers</a>
+  <a class="btn ghost" href="#beyond">Beyond Monday</a>
+ </div>
+ <div class="herostats">
+  <div><b class="num cy" id="hs1">4</b><span>files your office already has: quotes, orders, freight, samples</span></div>
+  <div><b class="num" id="hs2">10</b><span>business days from the first file to a signed ledger</span></div>
+  <div><b class="num li">Fixed</b><span>fee, agreed before we start. Three ways to engage, sized to your business.</span></div>
+ </div>
+ <p class="micro">Demo data is modeled on a made to order design business selling to hotel projects and the trade. Your ledger runs on your files.</p>
+ </div>
+</div>
+
+<section id="demo">
+ <div class="sechead g"><div class="plate"><b>01</b><span>What lands on your desk</span></div><div class="shx"><h2>Four files. <em>Zero</em> answers.</h2><p>This is what the office actually has on a Monday. The names do not match. The dates are typed three ways. Half the promised ship dates are blank. Nobody did anything wrong. This is just what happens when good people sell custom work fast.</p></div></div>
+ <div class="files" id="files"></div>
+ <div class="rawstats" id="rawstats"></div>
+</section>
+
+<section id="run">
+ <div class="sechead g"><div class="plate"><b>02</b><span>Azorian3 runs</span></div><div class="shx"><h2>Clean. Standardize. Complete. <em>Sign.</em></h2><p>Press run. The same four files go through the Azorian3 method: every name standardized, every duplicate removed, every blank filled with a value we can defend, and a stated confidence before a person signs it.</p></div></div>
+ <div class="run">
+  <div class="left" id="stages"></div>
+  <div class="right">
+   <div class="conf"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="6"/><circle id="confarc" cx="60" cy="60" r="52" fill="none" stroke="var(--li)" stroke-width="6" stroke-linecap="butt" stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)"/><text id="conftxt" x="60" y="68" text-anchor="middle" font-family="Syne" font-weight="700" font-size="26" fill="var(--tx)">0%</text></svg><div><b id="conflabel">Confidence</b><span>How sure we are of every number on the ledger. We state it before you see a chart, and we never hide a filled value.</span></div></div>
+   <div class="fixer"><div class="lbl">Live corrections</div><div id="fixes"><div class="mu" style="font-family:var(--dm);font-size:13px">Waiting for run.</div></div></div>
+   <div class="stamps"><div class="stamp" id="st1"><b>Validated</b>Jacob M. Martinko, COO. Every KPI traced to source rows.</div><div class="stamp" id="st2"><b>Security review</b>Justin M. Boynton, CIO. Your files never leave a controlled environment.</div><div class="stamp" id="st3"><b>Statistics</b>Lawrence Marinucci, VP Statistics. Imputation method on record.</div></div>
+  </div>
+ </div>
+ <div class="runbar"><button class="btn solid pulse" id="runbtn">Run Azorian3</button></div>
+</section>
+
+<section id="ledger">
+ <div class="sechead g"><div class="plate"><b>03</b><span>Your ledger</span></div><div class="shx"><h2>One screen. <em>Every</em> number has a fix.</h2><p>Every tile, bar and row is clickable. It tells you what the number is in plain words, why it is happening in your data, what to do Monday morning, and what it is worth. Dotted terms explain themselves when you hover or tap.</p></div></div>
+ <div class="ledger" id="ledgerbody">
+  <div class="confstrip" id="confstrip"></div>
+  <div class="grid" id="grid"></div>
+ </div>
+</section>
+
+<section id="beyond" class="alt">
+ <div class="sechead g"><div class="plate"><b>04</b><span>Beyond Monday</span></div><div class="shx"><h2>Fixing the numbers is <em>where</em> we start.</h2><p>Once the ledger is clean we can tell you what is about to happen, show the range when a blank could go either way, watch every Monday for what changed, and find the buyers in your market who have never asked you for a quote.</p></div></div>
+ <div class="bgrid" id="bgrid"></div>
+</section>
+
+<section id="how">
+ <div class="sechead g"><div class="plate"><b>05</b><span>What we do</span></div><div class="shx"><h2>We take your files and hand back a ledger you can <em>sign.</em></h2><p>Simple, accurate and as stylish as you want it to be. We meet you where your processes already are and we do not add work. Your files, exactly as they are today, are enough to start.</p></div></div>
+ <div class="steps">
+  <div><div class="k">PHASE 0</div><b>Discovery, no charge</b><p>One hour with the owner. You tell us the three numbers you wish you had every Monday. We tell you if we can get them from the files you already keep.</p></div>
+  <div><div class="k">PHASE 1</div><b>Clean and standardize</b><p>Customer names, projects, SKUs and dates made consistent across every file. Duplicates removed and listed, never silently dropped.</p></div>
+  <div><div class="k">PHASE 2</div><b>Complete and state confidence</b><p>Blanks filled with statistical imputation under Lawrence Marinucci, 30 years of clinical trial statistics. Every filled value is flagged. Confidence is stated on the ledger.</p></div>
+  <div><div class="k">PHASE 3</div><b>Human sign off</b><p>Jake Martinko traces every KPI to source rows and signs the validation workbook. Justin Boynton reviews security. Nothing is published without both.</p></div>
+  <div><div class="k">PHASE 4</div><b>Your Monday ledger</b><p>One screen, refreshed from your files. Late orders, deposit exposure, quote aging, landed cost, samples out. Each with the fix.</p></div>
+ </div>
+ <div class="offer">
+  <div class="box hi"><div class="eyebrow li" style="color:var(--li)">PRICING</div><h3>Fixed fee. Fixed date. <em>You</em> own the result.</h3><p>Three ways to engage, each priced on the outcome and the calendar, not on billable days. The fee is sized to your order volume, how many files and systems you run, and how clean the data is, and it is agreed before we start.</p>
+   <div class="tiers">
+    <div><i>Sprint</i><b>Ledger Sprint</b><span>Fixed fee. Your four files to a signed ledger in 10 business days. Executive readout with the top ten money moves.</span></div>
+    <div class="pick"><i>Most chosen</i><b>Monday Subscription</b><span>Flat monthly fee, cancel any month. Weekly refresh, forecast, best and worst case, watch list and buyer radar. Unlimited users.</span></div>
+    <div><i>Build</i><b>Build and Hand Over</b><span>Fixed scope. Wired into QuickBooks and your quote log, documented, trained. 8 weeks. You own the code and the data.</span></div>
+   </div></div>
+  <div class="box"><div class="eyebrow">WHO THIS FITS</div><h3>Owner led. 5 to 50 people. No data team.</h3><p>Showrooms, makers, rug and textile houses, tile and stone, lighting studios, galleries. Businesses where the owner still signs the checks and can decide in one meeting. If you have a controller and an ERP team, we are probably not your people, and we will say so in the first hour.</p></div>
+ </div>
+ <div class="team">
+  <div><i>Chief Executive</i><b>James F. Canfield IV</b><span>CEO. 15 years of procurement and spend data in regulated industry.</span></div>
+  <div><i>Operations</i><b>Jacob M. Martinko</b><span>COO. The human KPI validator. Signs every workbook.</span></div>
+  <div><i>Infrastructure and cyber</i><b>Justin M. Boynton</b><span>CIO. Own data center, about 2,000 clients in regulated industries.</span></div>
+  <div><i>Statistics</i><b>Lawrence Marinucci</b><span>VP of Statistics. 30 years of biopharma clinical trial statistics.</span></div>
+  <div><i>Commercial</i><b>Thaddeus Kornegay</b><span>CCO. High end furniture procurement and logistics for hotel and residential projects.</span></div>
+  <div><i>Legal</i><b>Ahmad Seraj</b><span>General Counsel. Seraj Law PLLC, New York.</span></div>
+  <div><i>Account management</i><b>Nicole Riley</b><span>Account Manager. Your day to day contact from the first file to the first ledger.</span></div>
+  <div><i>Account management</i><b>Dahlia Riley</b><span>Account Manager. Runs the Monday cadence and the weekly watch with you.</span></div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+ <div class="lg lgf">{{LOCKUPSVG}}</div>
+ <div class="contact">contact@azorian3.com · azorian3.com</div>
+ <div>Azorian 3, LLC · New York · Demo figures are modeled, your ledger runs on your files.</div>
+</div></footer>
+
+<div id="veil"></div>
+<aside id="drawer" aria-live="polite"></aside>
+<div id="tip"></div>
+<script>{{JS}}</script>
+</body>
+</html>

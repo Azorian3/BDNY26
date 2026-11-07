@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The BDNY walk. Azorian3 at Javits, November 8 and 9.</title>
+<meta name="description" content="861 exhibitors at BDNY 2026, cross referenced against the Azorian3 Manhattan radar. The booths worth a Sunday, with the one question to ask at each.">
+<meta name="author" content="James F. Canfield IV, Azorian3">
+<meta name="theme-color" content="#0B0D10">
+<link rel="icon" type="image/png" href="data:image/png;base64,{{MARK}}">
+<style>{{CSS}}</style>
+</head>
+<body>
+<script>(function(){var t=localStorage.getItem("az3_theme")||new URLSearchParams(location.search).get("theme");if(t)document.documentElement.setAttribute("data-theme",t)})();</script>
+<header><div class="wrap">
+ <a href="index.html" class="lg" aria-label="Azorian3">{{LOCKUPSVG}}</a>
+ <nav><a href="https://azorian3-bdny.netlify.app">Demo</a><a href="index.html" class="on">The Walk</a></nav>
+ <div class="hr"><span class="tag">BDNY 2026 · Javits · Nov 8 and 9</span><button class="themebtn" type="button" aria-label="Switch light and dark"><i></i><span>Light</span></button></div>
+</div></header>
+
+<main class="wrap">
+<div class="wk-hero">
+ <div class="eyebrow">Internal · the floor plan, filtered</div>
+ <h1>861 booths. <em>Twenty eight</em> worth your Sunday.</h1>
+ <p class="lede">The full BDNY exhibitor list cross referenced against the Manhattan radar. Most of the hall is national manufacturers with finance teams, not our buyer. What is left is the New York, owner led slice, plus the radar firms that happen to be exhibiting. Tap a card for the why and the one question to ask. Tap Visited when you have.</p>
+ <div class="herostats">
+  <div><b class="num" id="k1">861</b><span>exhibitors on the a2z floor plan, pulled this week</span></div>
+  <div><b class="num cy" id="k2">24</b><span>New York, owner led booths shortlisted by hand</span></div>
+  <div><b class="num li" id="k3">3</b><span>radar firms exhibiting, plus one name to verify</span></div>
+ </div>
+</div>
+
+<section id="radar">
+ <div class="sechead g"><div class="plate"><b>01</b><span>Already on the radar</span></div><div class="shx"><h2>Warm calls with <em>no</em> front desk.</h2><p>These firms were scored on the Manhattan radar before we knew they were exhibiting. The booth is the easiest version of the walk in. The opener is the one already written for them.</p></div></div>
+ <div class="radar" id="radarcards"></div>
+</section>
+
+<section id="list">
+ <div class="sechead g"><div class="plate"><b>02</b><span>The shortlist</span></div><div class="shx"><h2>Owner led, New York based, <em>reachable.</em></h2><p>Graded the Azorian3 way. Ideal means the owner can say yes in one meeting. Pass means we would not stop unless they stop us. Filter, then walk the low numbers first.</p></div></div>
+ <div class="filters" id="filters"></div>
+ <div class="cards" id="cards"></div>
+</section>
+
+<section id="route">
+ <div class="sechead g"><div class="plate"><b>03</b><span>The route</span></div><div class="shx"><h2>Sunday morning, <em>before</em> the hotel buyers arrive.</h2><p>Booth numbers cluster by aisle. Start low, work up, finish at the radar firms in the 2000s and 3000s.</p></div></div>
+ <div class="route">
+  <div class="box"><div class="eyebrow">How to walk it</div><ol id="play"></ol></div>
+  <div class="box"><div class="eyebrow">Booth clusters</div><p class="mu" style="font-size:14px;margin-top:8px">Shortlist and radar booths grouped by the hundreds. Numbers climb as you move across the hall.</p><div class="clusters" id="clusters"></div></div>
+ </div>
+</section>
+
+<section id="lookup">
+ <div class="sechead g"><div class="plate"><b>04</b><span>Any booth</span></div><div class="shx"><h2>Someone interesting? <em>Look them up.</em></h2><p>Every one of the 861 exhibitors is in here. If they are on the shortlist or the radar you will see it. If not, apply the filter on the spot: owner led, 5 to 50 people, no data team.</p></div></div>
+ <div class="search"><input id="q" type="search" placeholder="Name or booth number" autocomplete="off"><span class="count" id="qcount"></span></div>
+ <div class="results" id="results" hidden></div>
+</section>
+</main>
+
+<footer><div class="wrap">
+ <div class="lg lgf">{{LOCKUPSVG}}</div>
+ <div class="contact">contact@azorian3.com · azorian3.com</div>
+ <div>Azorian 3, LLC · New York · Exhibitor list from the BDNY 2026 floor plan. Grades are our own.</div>
+</div></footer>
+<script>window.__WALK__={{DATA}}</script>
+<script>{{JS}}</script>
+</body>
+</html>

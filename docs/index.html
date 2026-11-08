@@ -409,6 +409,11 @@ html.intro-on,html.intro-on body{overflow:hidden}
 #intro.out{opacity:0;pointer-events:none}
 #intro video{width:100%;height:100%;object-fit:contain;background:#0B0D10;opacity:0;transition:opacity .6s}
 #intro.live video{opacity:1}
+#intro.wait video{opacity:1}
+#iplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:none;flex-direction:column;align-items:center;gap:16px;background:none;border:0;color:#E8ECF1;cursor:pointer;font:600 12px/1 var(--syne);letter-spacing:.3em;text-transform:uppercase}
+#iplay i{width:96px;height:96px;border-radius:50%;border:2px solid rgba(232,236,241,.6);background:rgba(11,13,16,.55);backdrop-filter:blur(8px);position:relative;box-shadow:0 0 0 14px rgba(95,227,255,.10)}
+#iplay i:after{content:"";position:absolute;left:38px;top:30px;border-style:solid;border-width:18px 0 18px 30px;border-color:transparent transparent transparent #C7F23C}
+#intro.wait:not(.live) #iplay{display:flex}
 #intro .ibar{position:absolute;left:0;right:0;bottom:max(22px,env(safe-area-inset-bottom));display:flex;justify-content:center;gap:12px;padding:0 18px}
 .ibtn{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--syne);letter-spacing:.22em;text-transform:uppercase;color:#E8ECF1;background:rgba(17,21,27,.72);border:1px solid rgba(232,236,241,.22);padding:14px 18px;border-radius:999px;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .ibtn.ghost{background:transparent}
@@ -422,22 +427,25 @@ html.intro-on,html.intro-on body{overflow:hidden}
 <body>
 <script>(function(){var t=localStorage.getItem("az3_theme")||new URLSearchParams(location.search).get("theme");if(t)document.documentElement.setAttribute("data-theme",t)})();</script>
 <div id="intro" aria-label="Azorian3 film">
- <video id="iv" muted playsinline autoplay preload="auto"></video>
+ <video id="iv" muted playsinline autoplay preload="auto" poster="intro_poster.jpg"></video>
+ <button type="button" id="iplay" aria-label="Play the film"><i></i><span>Play the film</span></button>
  <div class="ibar">
   <button type="button" class="ibtn" id="isnd"><i></i><span>Tap for sound</span></button>
   <button type="button" class="ibtn ghost" id="iskip"><span>Skip to the demo</span></button>
  </div>
  <div class="iprog"><i id="iprg"></i></div>
 </div>
-<script>(function(){var q=new URLSearchParams(location.search);var el=document.getElementById('intro');if(!el)return;if(q.get('intro')==='0'||sessionStorage.getItem('az3_intro')){el.remove();return}
+<script>(function(){var q=new URLSearchParams(location.search);var el=document.getElementById('intro');if(!el)return;if(q.get('intro')==='0'){el.remove();return}
 document.documentElement.classList.add('intro-on');var v=document.getElementById('iv');var small=Math.min(screen.width,screen.height)<700||matchMedia('(max-width:900px)').matches;v.src=small?'intro_720.mp4':'intro_1080.mp4';
-var done=false;function out(){if(done)return;done=true;try{sessionStorage.setItem('az3_intro','1')}catch(e){}el.classList.add('out');document.documentElement.classList.remove('intro-on');setTimeout(function(){try{v.pause()}catch(e){}el.remove()},900)}
-document.getElementById('iskip').onclick=out;v.addEventListener('ended',out);v.addEventListener('error',out);
-var snd=document.getElementById('isnd');function sound(){v.muted=false;v.volume=1;el.classList.add('snd');snd.querySelector('span').textContent='Sound on';var p=v.play();if(p&&p.catch)p.catch(function(){})}
-snd.onclick=function(){if(v.muted)sound();else{v.muted=true;el.classList.remove('snd');snd.querySelector('span').textContent='Tap for sound'}};v.onclick=function(){if(v.muted)sound()};
+var done=false;function out(){if(done)return;done=true;el.classList.add('out');document.documentElement.classList.remove('intro-on');setTimeout(function(){try{v.pause()}catch(e){}el.remove()},900)}
+document.getElementById('iskip').onclick=out;v.addEventListener('ended',out);v.addEventListener('error',function(){if(!started)out()});
+var snd=document.getElementById('isnd');function sound(){v.muted=false;v.volume=1;el.classList.add('snd');snd.querySelector('span').textContent='Sound on';tryPlay()}
+snd.onclick=function(){if(v.muted)sound();else{v.muted=true;el.classList.remove('snd');snd.querySelector('span').textContent='Tap for sound'}};
 var prg=document.getElementById('iprg');v.addEventListener('timeupdate',function(){if(v.duration)prg.style.width=(v.currentTime/v.duration*100)+'%'});
-var started=false;v.addEventListener('playing',function(){started=true;el.classList.add('live')});setTimeout(function(){if(!started)out()},9000);
-var p=v.play();if(p&&p.catch)p.catch(function(){setTimeout(function(){if(!started)out()},1500)})})();</script>
+var started=false;v.addEventListener('playing',function(){started=true;el.classList.add('live');el.classList.remove('wait')});
+function tryPlay(){var p=v.play();if(p&&p.catch)p.catch(function(){if(!started)el.classList.add('wait')})}
+var play=document.getElementById('iplay');play.onclick=function(){sound()};v.onclick=function(){if(!started)sound();else if(v.muted)sound()};
+setTimeout(function(){if(!started)el.classList.add('wait')},2500);tryPlay()})();</script>
 <header><div class="wrap">
  <a href="#top" class="lg" aria-label="Azorian3"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Azorian3. Complexity into clarity." viewBox="0 0 1210 340"><defs>
   <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5FE3FF"/><stop offset="1" stop-color="#3B7DDD"/></linearGradient>

@@ -402,10 +402,42 @@ footer img{display:none}
 @media(max-width:560px){.team{grid-template-columns:1fr}}
 
 @media(max-width:900px){.lg{height:62px;margin-left:-6px}footer .lg{height:90px}}
+
+/* intro film */
+html.intro-on,html.intro-on body{overflow:hidden}
+#intro{position:fixed;inset:0;z-index:200;background:#0B0D10;display:flex;align-items:center;justify-content:center;transition:opacity .85s ease}
+#intro.out{opacity:0;pointer-events:none}
+#intro video{width:100%;height:100%;object-fit:contain;background:#0B0D10;opacity:0;transition:opacity .6s}
+#intro.live video{opacity:1}
+#intro .ibar{position:absolute;left:0;right:0;bottom:max(22px,env(safe-area-inset-bottom));display:flex;justify-content:center;gap:12px;padding:0 18px}
+.ibtn{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--syne);letter-spacing:.22em;text-transform:uppercase;color:#E8ECF1;background:rgba(17,21,27,.72);border:1px solid rgba(232,236,241,.22);padding:14px 18px;border-radius:999px;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.ibtn.ghost{background:transparent}
+.ibtn i{width:8px;height:8px;border-radius:50%;background:#FF5C5C;box-shadow:0 0 0 4px rgba(255,92,92,.18)}
+#intro.snd .ibtn i{background:#C7F23C;box-shadow:0 0 0 4px rgba(199,242,60,.18)}
+#intro .iprog{position:absolute;left:0;right:0;top:0;height:3px;background:rgba(232,236,241,.08)}
+#intro .iprog i{display:block;height:100%;width:0;background:#5FE3FF;transition:width .25s linear}
+@media(max-width:900px){#intro video{object-fit:contain}.ibtn{padding:12px 14px;font-size:10px;letter-spacing:.16em;white-space:nowrap}#intro .ibar{gap:8px;bottom:max(84px,calc(env(safe-area-inset-bottom) + 72px))}}
 </style>
 </head>
 <body>
 <script>(function(){var t=localStorage.getItem("az3_theme")||new URLSearchParams(location.search).get("theme");if(t)document.documentElement.setAttribute("data-theme",t)})();</script>
+<div id="intro" aria-label="Azorian3 film">
+ <video id="iv" muted playsinline autoplay preload="auto"></video>
+ <div class="ibar">
+  <button type="button" class="ibtn" id="isnd"><i></i><span>Tap for sound</span></button>
+  <button type="button" class="ibtn ghost" id="iskip"><span>Skip to the demo</span></button>
+ </div>
+ <div class="iprog"><i id="iprg"></i></div>
+</div>
+<script>(function(){var q=new URLSearchParams(location.search);var el=document.getElementById('intro');if(!el)return;if(q.get('intro')==='0'||sessionStorage.getItem('az3_intro')){el.remove();return}
+document.documentElement.classList.add('intro-on');var v=document.getElementById('iv');var small=Math.min(screen.width,screen.height)<700||matchMedia('(max-width:900px)').matches;v.src=small?'intro_720.mp4':'intro_1080.mp4';
+var done=false;function out(){if(done)return;done=true;try{sessionStorage.setItem('az3_intro','1')}catch(e){}el.classList.add('out');document.documentElement.classList.remove('intro-on');setTimeout(function(){try{v.pause()}catch(e){}el.remove()},900)}
+document.getElementById('iskip').onclick=out;v.addEventListener('ended',out);v.addEventListener('error',out);
+var snd=document.getElementById('isnd');function sound(){v.muted=false;v.volume=1;el.classList.add('snd');snd.querySelector('span').textContent='Sound on';var p=v.play();if(p&&p.catch)p.catch(function(){})}
+snd.onclick=function(){if(v.muted)sound();else{v.muted=true;el.classList.remove('snd');snd.querySelector('span').textContent='Tap for sound'}};v.onclick=function(){if(v.muted)sound()};
+var prg=document.getElementById('iprg');v.addEventListener('timeupdate',function(){if(v.duration)prg.style.width=(v.currentTime/v.duration*100)+'%'});
+var started=false;v.addEventListener('playing',function(){started=true;el.classList.add('live')});setTimeout(function(){if(!started)out()},9000);
+var p=v.play();if(p&&p.catch)p.catch(function(){setTimeout(function(){if(!started)out()},1500)})})();</script>
 <header><div class="wrap">
  <a href="#top" class="lg" aria-label="Azorian3"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Azorian3. Complexity into clarity." viewBox="0 0 1210 340"><defs>
   <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5FE3FF"/><stop offset="1" stop-color="#3B7DDD"/></linearGradient>
@@ -424,9 +456,9 @@ footer img{display:none}
 <div class="hero">
  <canvas id="heroc" aria-hidden="true"></canvas>
  <div class="copy">
- <div class="eyebrow">For the people who make what the hotels buy</div><div class="matlabel"><i></i><span id="matlabel"></span></div>
+ <div class="eyebrow">Hospitality, high end residential and commercial</div><div class="matlabel"><i></i><span id="matlabel"></span></div>
  <h1>You create.<br>You bring the vision.<br>We bring the <em>insight.</em></h1>
- <p class="lede">Every booth in this hall sells something beautiful. Almost none of them can say, tonight, which orders are late, how much deposit money is exposed, or what that last container really cost. Pick what you make. Then watch your files turn into one ledger.</p>
+ <p class="lede">Every maker in this hall sells something beautiful, to hotels, to high end homes, to commercial projects. Almost none of them can say, tonight, which orders are late, how much deposit money is exposed, or what that last container really cost. Pick what you make. Then watch your files turn into one ledger.</p>
  <div class="chips" id="chips"></div>
  <div class="row">
   <a class="btn solid" href="#demo">Show me on my numbers</a>
